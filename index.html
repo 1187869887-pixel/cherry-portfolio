@@ -535,16 +535,16 @@ a{color:var(--gold);text-decoration:none}
      本地打开(file://)读 assets/videos；线上(GitHub Pages)读 Release 资产 */
   var ONLINE = location.protocol !== "file:";
   var REL_BASE = "https://github.com/1187869887-pixel/cherry-portfolio/releases/download/v1.0.0/";
-  function media(name){ return ONLINE ? REL_BASE + encodeURIComponent(name) : "assets/videos/" + name; }
+  function media(p){ return ONLINE ? REL_BASE + p.rel : "assets/videos/" + p.name; }
   var PROGRAMS = [
-    {name:"盘下倒闭包子铺，我靠灶灵逆风翻盘.mp4", ch:"CH-01", title:"盘下倒闭包子铺，我靠灶灵逆风翻盘", genre:"奇幻剧场", date:"2026.06.25"},
-    {name:"王府嫡女疯了，抄家前三天卖光家产.mp4", ch:"CH-02", title:"王府嫡女疯了，抄家前三天卖光家产", genre:"古装剧场", date:"2026.07.14"},
-    {name:"村里来了位骨妈妈.mp4", ch:"CH-03", title:"村里来了位骨妈妈", genre:"温情剧场", date:"2026.07.28"},
-    {name:"半生为母，半生为我.mp4", ch:"CH-04", title:"半生为母，半生为我", genre:"浓情剧场", date:"2026.08.19"},
-    {name:"粥粥历险记.mp4", ch:"CH-05", title:"粥粥历险记", genre:"童话剧场", date:"2026.08.28"},
-    {name:"谁在复制我的人生.mp4", ch:"CH-06", title:"谁在复制我的人生", genre:"悬疑剧场", date:"2026.09.08"}
+    {name:"盘下倒闭包子铺，我靠灶灵逆风翻盘.mp4", rel:"drama-01.mp4", ch:"CH-01", title:"盘下倒闭包子铺，我靠灶灵逆风翻盘", genre:"奇幻剧场", date:"2026.06.25"},
+    {name:"王府嫡女疯了，抄家前三天卖光家产.mp4", rel:"drama-02.mp4", ch:"CH-02", title:"王府嫡女疯了，抄家前三天卖光家产", genre:"古装剧场", date:"2026.07.14"},
+    {name:"村里来了位骨妈妈.mp4", rel:"drama-03.mp4", ch:"CH-03", title:"村里来了位骨妈妈", genre:"温情剧场", date:"2026.07.28"},
+    {name:"半生为母，半生为我.mp4", rel:"drama-04.mp4", ch:"CH-04", title:"半生为母，半生为我", genre:"浓情剧场", date:"2026.08.19"},
+    {name:"粥粥历险记.mp4", rel:"drama-05.mp4", ch:"CH-05", title:"粥粥历险记", genre:"童话剧场", date:"2026.08.28"},
+    {name:"谁在复制我的人生.mp4", rel:"drama-06.mp4", ch:"CH-06", title:"谁在复制我的人生", genre:"悬疑剧场", date:"2026.09.08"}
   ];
-  PROGRAMS.forEach(function(p){p.file = media(p.name)});
+  PROGRAMS.forEach(function(p){p.file = media(p)});
 
   var $ = function(id){return document.getElementById(id)};
   var screen=$("screen"), player=$("player"), preview=$("preview"), pvTitle=$("pvTitle"),
