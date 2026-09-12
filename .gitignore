@@ -1,0 +1,5 @@
+# 视频走 Release 资产，不进 Git 仓库（单文件超 GitHub 100MB 限制）
+assets/videos/
+_backup/
+_shots/
+*.log
